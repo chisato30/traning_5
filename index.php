@@ -9,16 +9,16 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <style>
-              html{
-  min-height: 100%;
-  position: relative;
-}
+        html {
+            min-height: 100%;
+            position: relative;
+        }
 
-footer {
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
+        footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
 
         .footer {
             width: 100%;
@@ -27,7 +27,7 @@ footer {
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative; 
+            position: relative;
             bottom: 0;
             z-index: 1000;
             position: absolute;
@@ -49,6 +49,7 @@ footer {
         main {
             flex: 1;
         }
+
         img {
             max-width: 100%;
             height: auto;
@@ -79,7 +80,7 @@ footer {
         }
 
         .swiper-button-next:after {
-            content: ""; 
+            content: "";
         }
 
         .swiper-pagination-bullet {
@@ -105,11 +106,8 @@ footer {
             z-index: 1000;
         }
 
-        .swiper-container {
-            margin-top: auto;
-            position: relative;
-            z-index: 1;
-            overflow: hidden;
+        .swiper-slide {
+            width: auto;
         }
 
         .header_content {
@@ -236,7 +234,7 @@ footer {
                             <option value="B席">B席</option>
                             <option value="C席">C席</option>
                         </select>
-                        <p class="prefecture_varidation" style="display: none;">お席は必須入力です。</p>
+                        <p class="prefecture_varidation" style="display: none; color: red;">お席は必須入力です。</p>
                     </div>
                     <div class="form_content">
                         <label for="email">メールアドレス<span class="required">*必須</span></label>
@@ -245,7 +243,7 @@ footer {
                     <div class="form_content">
                         <label for="tel">電話番号<span>*任意</span></label>
                         <input type="tel" name="tel" placeholder="例）12345678901">
-                        <p class="tel_varidation" style="display: none;">番号が誤っています。</p>
+                        <p class="tel_varidation" style="display: none; color: red;">番号が誤っています。</p>
                     </div>
                     <input type="submit" value="送信" id="submitButton" disabled>
                 </form>
@@ -259,9 +257,10 @@ footer {
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         var swiper = new Swiper('.swiper-container', {
+            centeredSlides: true,
             loop: true,
-            centeredSlides:true,
-            // slidesPerView: 1
+            slidesPerView: 1.1,
+            spaceBetween: 10,
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -270,6 +269,22 @@ footer {
                 el: '.swiper-pagination',
                 clickable: true,
             },
+            on: {
+                init: function loopBagFix(swiper) {
+                    const slides = swiper.slides
+                    const wrapper = swiper.wrapperEl
+                    slides.forEach((slide) => { wrapper.append(slide.cloneNode(true)) })
+
+                    setTimeout(() => {
+                        const paginations = swiper.pagination.bullets
+                        paginations.forEach((pagination, index) => {
+                            if (index > (paginations.length / 2) - 1) {
+                                pagination.remove()
+                            }
+                        })
+                    }, 100)
+                },
+            }
         });
 
     </script>
