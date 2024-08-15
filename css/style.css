@@ -89,7 +89,7 @@ li {
   position: relative;
   padding-left: 50px;
   padding-right: 50px;
-
+  over-flow: hidden;
 }
 
 .swiper-slide {
