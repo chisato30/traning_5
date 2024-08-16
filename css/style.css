@@ -51,9 +51,9 @@ li {
   justify-content: space-between;
 }
 
-.header_content img {
+/* .header_content img {
   margin-right: auto;
-}
+} */
 
 .key_visual {
   width: 100%;
@@ -89,7 +89,7 @@ li {
   position: relative;
   padding-left: 50px;
   padding-right: 50px;
-
+  overflow: hidden;
 }
 
 .swiper-slide {
@@ -337,11 +337,11 @@ input[type="submit"] {
 
   .navigation { 
     display: none; 
-    position: fixed;
-    top: 42px;
+    position: absolute;
     z-index: 9999;
     background: #BEA574;
     width: 100%;
+    top: 54px;
   }
 
   .navigation__list {
@@ -368,6 +368,12 @@ input[type="submit"] {
     border-left: 1px solid white;
     border-right: 1px solid white;
   }
+
+  .hamburger-menu.active + .navigation {
+    max-height: calc(100vh - 100px); /* アコーディオンメニューの高さを調整 */
+    overflow-y: auto;
+    transition: max-height 0.3s ease;
+}
 }
 
 @media screen and (max-width: 440px) {

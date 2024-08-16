@@ -122,6 +122,7 @@
         .header_content img {
             width: 100px;
             height: auto;
+            margin-right: 200px;
         }
 
         .service {
@@ -180,8 +181,6 @@
         <div class="swiper-pagination"></div>
     </div>
     <main>
-        <div class="key_visual">
-        </div>
         <div class="about_content section">
             <p class="about_text">今年も始まる<span>夏休み</span></p>
         </div>
