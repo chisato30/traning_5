@@ -129,11 +129,20 @@
             cursor: pointer;
         }
 
+        #service p {
+            text-align: center;
+        }
+
         @media (max-width: 690px) {
             .header_content img {
                 width: 80px;
                 height: auto;
             }
+        }
+
+        #schedule {
+            margin: 0 auto;
+            padding: 20px;
         }
     </style>
 </head>

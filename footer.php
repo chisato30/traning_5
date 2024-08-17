@@ -15,6 +15,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    height: auto;
 }
 
         .footer {

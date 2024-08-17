@@ -15,6 +15,10 @@
             transition: 0.3;
         }
 
+        .header_content img {
+                margin-right: 200px;
+            }
+
         .confirmation-title {
             text-align: center;
             color: black;

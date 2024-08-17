@@ -22,8 +22,16 @@
                 4px;
             }
 
+            .header_content img {
+                margin-right: 200px;
+            }
+
+            footer{
+            height: auto;
+        }
+
             p {
-                height: 1100px;
+                height: 550px;
                 line-height: 550px;
             }
 
@@ -81,7 +89,10 @@
             </div>
         </main>
         <!-- フッター -->
-        <?php include 'footer.php'; ?>
+         <footer>
+        <?php include 'footer.php'; ?>       
+    </footer>
+
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="./js/index.js"></script>

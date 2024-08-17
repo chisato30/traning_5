@@ -175,6 +175,7 @@ li {
 
 .description_text.active {
   display: block;
+  text-align: left;
 }
 
 .description_text {
@@ -251,10 +252,14 @@ input[type="submit"] {
   .service_flex {
     flex-flow: column;
     margin: 0 auto;
+    display: -webkit-box;
   }
 
   .service {
-    margin-bottom: 16px;
+    width: 34.2%;
+    margin: 0 auto;
+    text-align: center;
+    /* font-size: 9.8px; */
   }
 
   .navigation__link {
@@ -279,6 +284,10 @@ input[type="submit"] {
  @media screen and (max-width: 525px) {
   .header_content ul {
     display: none;
+  }
+
+  .service_flex{
+    font-size: 16px;
   }
 
   #js-hamburger-menu {
@@ -374,6 +383,20 @@ input[type="submit"] {
     overflow-y: auto;
     transition: max-height 0.3s ease;
 }
+#web.service.active{
+  padding-right: 0px;
+    padding-left: 0px;
+}
+
+#seo.service{
+  padding-right: 0px;
+    padding-left: 0px;
+}
+
+#app.service{
+  padding-right: 0px;
+    padding-left: 0px;
+}
 }
 
 @media screen and (max-width: 440px) {
@@ -381,6 +404,28 @@ input[type="submit"] {
   .key_visual p {
     font-size: 24px;
   }
+
+  .service {
+    width: 34.8%;
+    margin: 0 auto;
+    font-size: 16px;
+    text-align: center;
+}
+
+#web.service.active{
+  padding-right: 0px;
+    padding-left: 0px;
+}
+
+#seo.service{
+  padding-right: 0px;
+    padding-left: 0px;
+}
+
+#app.service{
+  padding-right: 0px;
+    padding-left: 0px;
+}
 
   iframe{
     width:300px;
